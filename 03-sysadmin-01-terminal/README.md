@@ -3,12 +3,15 @@
 1. Установите средство виртуализации [Oracle VirtualBox](https://www.virtualbox.org/).
 
 Выполнено
+
 2. Установите средство автоматизации [Hashicorp Vagrant](https://www.vagrantup.com/).
 
 Выполнено
+
 3. В вашем основном окружении подготовьте удобный для дальнейшей работы терминал.
 
-Выполнено  
+Выполнено
+
 4. С помощью базового файла конфигурации запустите Ubuntu 20.04 в VirtualBox посредством Vagrant:
 
     Был скачен vagrant box bento/ubuntu с Vagrant Cloud вручную. С помощью `vagrant box add bento/ubuntu <путь до box файла>` он был добавлен как локальный "box". 
