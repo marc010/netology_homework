@@ -24,7 +24,7 @@ Description=Node Exporter Service
 
 [Service]
 EnvironmentFile=/etc/default/node_exporter
-ExecStart=/usr/bin/node_exporter
+ExecStart=/usr/bin/node_exporter $EXTRA_OPTS
 
 [Install]
 WantedBy=multi-user.target
@@ -32,7 +32,7 @@ Alias=node_exporter.service
 ```
 Создание файла с опциями:
 ```bash
-$ echo "#some options" >/etc/default/node_exporter
+$ echo 'EXTRA_OPTS="--log.level=info"' >/etc/defau0lt/node_exporter
 ```
 Добавление в автозагрузку:
 ```bash
