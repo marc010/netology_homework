@@ -101,5 +101,5 @@ UNCONN            0                 0                            10.0.2.15%eth0:
 
 5. Используя diagrams.net, создайте L3 диаграмму вашей домашней сети или любой другой сети, с которой вы работали. 
 
-![image](https://bitbucket.org/marc101/netology_homework/src/main/03-sysadmin-08-net/pict/Local%20network%20diagram.drawio.png)
+![Домашняя сеть](media/LocalNet.png)
 
