@@ -120,7 +120,7 @@ word_count=$(cat $1 |wc -m)
 
 REGEX="\[[[:digit:]]*-[[:alpha:]]*-[[:digit:]]*-[[:alpha:]]*\] *"
 
-if [[ "$message" =~ $REGEX ]] && [[  $word_count -gt 30  ]]; then
+if [[ "$message" =~ $REGEX ]] && [[  $word_count -lt 30  ]]; then
     echo "Nice commit!"
 else
     echo "Bad commit!"
