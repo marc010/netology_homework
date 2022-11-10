@@ -107,8 +107,58 @@ $ docker tag test_netology_nginx itrevmarc/test_netology_nginx
 $ docker push itrevmarc/test_netology_nginx
 ```
 
-### Ответ: https://hub.docker.com/r/itrevmarc/test_netology_nginx
+---
+Дороботка.
 
+1. Создаем Dockerfile
+```
+FROM nginx
+
+COPY ./index.html /usr/share/nginx/html
+```
+2. Собираем докер
+```bash
+$ docker build -t itrevmarc/test_netology_nginx1 .
+Sending build context to Docker daemon  3.072kB
+Step 1/2 : FROM nginx
+ ---> 76c69feac34e
+Step 2/2 : COPY ./index.html /usr/share/nginx/html
+ ---> 8f1084791570
+Successfully built 8f1084791570
+Successfully tagged itrevmarc/test_netology_nginx1:latest
+```
+3. Запускаем и проверяем
+```bash
+$ docker run --name nginx_via_dockerfile --rm -d -p 80:80 itrevmarc/test_netology_nginx1 
+fe629cff5b7c5b5d4931d69dd30eb6dc4ee2cb8d0735d1c06ad358443e5c33c2 
+$ curl localhost
+<html>
+<head>
+Hey, Netology
+</head>
+<body>
+<h1>I’m DevOps Engineer!</h1>
+</body>
+</html>
+```
+4. Пушим образ на docker hub
+```bash
+ $ docker push itrevmarc/test_netology_nginx1 
+Using default tag: latest
+The push refers to repository [docker.io/itrevmarc/test_netology_nginx1]
+b9175a932109: Pushed 
+a2e59a79fae0: Mounted from itrevmarc/test_netology_nginx 
+4091cd312f19: Mounted from itrevmarc/test_netology_nginx 
+9e7119c28877: Mounted from itrevmarc/test_netology_nginx 
+2280b348f4d6: Mounted from itrevmarc/test_netology_nginx 
+e74d0d8d2def: Mounted from itrevmarc/test_netology_nginx 
+a12586ed027f: Mounted from itrevmarc/test_netology_nginx 
+latest: digest: sha256:e96fc42ef68621c90edb118d1c2a6ddcea34dc8f81296734e5b324fb0ab00fac size: 1777
+```
+
+### Ответ: https://hub.docker.com/r/itrevmarc/test_netology_nginx1
+
+---
 ## Задача 2
 
 Посмотрите на сценарий ниже и ответьте на вопрос:
