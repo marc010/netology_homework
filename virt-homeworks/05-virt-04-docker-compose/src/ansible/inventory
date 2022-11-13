@@ -1,0 +1,5 @@
+[nodes:children]
+manager
+
+[manager]
+vm-1.ru-central1.internal ansible_host=
