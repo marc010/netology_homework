@@ -1,0 +1,21 @@
+version: 3
+automerge: true
+parallel_plan: true
+parallel_apply: true
+projects:
+- name: my-project
+  dir: .
+  workspace: stage
+  repo_locking: true
+  autoplan:
+    when_modified: ["*.tf", "./**/*.tf"]
+    enabled: true
+  apply_requirements: [mergeable]
+- name: my-project
+  dir: .
+  workspace: prod
+  repo_locking: true
+  autoplan:
+    when_modified: ["*.tf", "./**/*.tf"]
+    enabled: true
+  apply_requirements: [mergeable]

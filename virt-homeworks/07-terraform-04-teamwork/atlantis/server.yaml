@@ -1,0 +1,19 @@
+repos:
+
+- id: github.com/marc010/terraform
+
+  apply_requirements: [mergeable]
+  allowed_overrides: [workflow]
+  workflow: default
+  allow_custom_workflows: true
+
+workflows:
+  default:
+    plan:
+      steps:
+      - init
+      - plan:
+          extra_args: ["-lock", "false"]
+    apply:
+      steps:
+      - apply
