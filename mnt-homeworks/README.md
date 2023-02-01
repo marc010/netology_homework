@@ -8,4 +8,6 @@
 
 ---
 
+#### [Работа с Playbook](./08-ansible-02-playbook/README.md)
 
+---
