@@ -8,8 +8,14 @@
 4. Подготовьте хосты в соответствии с группами из предподготовленного playbook.
 
 ```bash
-$ docker run -d -it -p 9000:9000 -p 8123:8123 --rm --name clickhouse-01 centos:7
-$ docker run -d -it --rm --name vector-01 centos:7
+$ terraform apply
+...
+Outputs:
+
+puplic_ip = [
+  "ip-address",
+  "ip-address",
+]
 ```
 
 ## Основная часть
@@ -21,11 +27,13 @@ $ docker run -d -it --rm --name vector-01 centos:7
 clickhouse:
   hosts:
     clickhouse-01:
-      ansible_connection: docker
-vector:
-  hosts:
+      ansible_host: <ip>
+      ansible_user: "centos"
+      ansible_ssh_private_key_file: "~/.ssh/id_rsa"
     vector-01:
-      ansible_connection: docker
+      ansible_host: <ip>
+      ansible_user: "centos"
+      ansible_ssh_private_key_file: "~/.ssh/id_rsa"
 ```
 
 2. Допишите playbook: нужно сделать ещё один play, который устанавливает и настраивает [vector](https://vector.dev).
@@ -50,18 +58,9 @@ vector:
 
 ```bash
 $ ansible-lint site.yml 
-WARNING  Overriding detected file kind 'yaml' with 'playbook' for given positional argument: site.yml
-WARNING  Listing 1 violation(s) that are fatal
-command-instead-of-shell: Use shell only when shell functionality is required
-site.yml:5 Task/Handler: Start clickhouse service
-
-You can skip specific rules or tags by adding them to your configuration file:
-# .ansible-lint
-warn_list:  # or 'skip_list' to silence them completely
-  - command-instead-of-shell  # Use shell only when shell functionality is required
-
-Finished with 1 failure(s), 0 warning(s) on 1 files.
 ```
+
+Ошибок не оказалось.
 
 6. Попробуйте запустить playbook на этом окружении с флагом `--check`.
 
@@ -173,14 +172,9 @@ clickhouse-01              : ok=4    changed=0    unreachable=0    failed=0    s
 vector-01                  : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0
 ```
 
-9. Подготовьте README.md файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги.
+9. Подготовьте [README.md](./playbook/README.md) файл по своему playbook. В нём должно быть описано: что делает playbook, какие у него есть параметры и теги.
 10. Готовый playbook выложите в свой репозиторий, поставьте тег `08-ansible-02-playbook` на фиксирующий коммит, в ответ предоставьте ссылку на него.
 
 ## [PLAYBOOK](./playbook)
 
----
-### Замечания при работе с docker:
-
-* `become: true` не работает в docker поскольку пользователь там уже root
-* В centos 7 handlers `ansible.builtin.service` не отработал при запуске clickhouse-server. Я думаю, это сязано с особенностью работы systemd в docker. Использовал `ansible.builtin.shell`
 ---
