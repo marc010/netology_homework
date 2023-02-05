@@ -11,3 +11,7 @@
 #### [Работа с Playbook](./08-ansible-02-playbook/README.md)
 
 ---
+
+#### [Использование Yandex Cloud](./08-ansible-03-yandex/README.md)
+
+---
