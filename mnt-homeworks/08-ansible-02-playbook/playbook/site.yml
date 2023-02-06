@@ -41,6 +41,12 @@
 
 - name: Install Vector
   hosts: vector
+  handlers:
+    - name: Start vector service
+      become: true
+      ansible.builtin.service:
+        name: vector
+        state: restarted
   tasks:
     - name: Get vector distrib
       ansible.builtin.get_url:
@@ -52,5 +58,6 @@
       ansible.builtin.yum:
         name:
           - vector-{{ vector_version }}-1.x86_64.rpm
+      notify: Start vector service
       tags:
         - vector

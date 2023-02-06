@@ -85,7 +85,7 @@
     - name: Setup nginx config
       become: true
       ansible.builtin.template:
-        src: ./nginx.conf
+        src: ./templates/nginx.conf
         dest: /etc/nginx/nginx.conf
         mode: '0644'
       notify: Start nginx service
