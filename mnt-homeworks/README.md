@@ -15,3 +15,7 @@
 #### [Использование Yandex Cloud](./08-ansible-03-yandex/README.md)
 
 ---
+
+#### [Работа с roles](./08-ansible-04-role/README.md)
+
+---

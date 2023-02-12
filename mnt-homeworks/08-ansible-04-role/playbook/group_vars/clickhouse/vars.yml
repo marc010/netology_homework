@@ -1,0 +1,6 @@
+---
+clickhouse_version: "latest"
+clickhouse_packages:
+  - clickhouse-client
+  - clickhouse-server
+  - clickhouse-common-static
