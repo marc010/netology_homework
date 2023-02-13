@@ -1,4 +1,4 @@
-## Playbook clickhouse and vector
+## Playbook clickhouse, lighthouse and vector
 
 ---
 

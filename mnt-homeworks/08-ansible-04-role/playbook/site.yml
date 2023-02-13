@@ -12,37 +12,5 @@
 
 - name: Install Lighthouse
   hosts: lighthouse-01
-  pre_tasks:
-    - name: Install required packages
-      become: true
-      ansible.builtin.yum:
-        name:
-          - epel-release
-          - git
-        state: present
-      tags:
-        - install
-    - name: Install nginx
-      become: true
-      ansible.builtin.yum:
-        name:
-          - nginx
-        state: present
-      tags:
-        - install
-    - name: Setup nginx config
-      become: true
-      ansible.builtin.template:
-        src: ./templates/nginx.conf
-        dest: /etc/nginx/nginx.conf
-        mode: '0644'
-      tags:
-        - install
   roles: 
     - lighthouse-role
-  post_tasks:
-    - name: Start nginx service
-      become: true
-      ansible.builtin.service:
-        name: nginx
-        state: restarted
