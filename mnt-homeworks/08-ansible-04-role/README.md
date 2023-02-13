@@ -37,5 +37,5 @@ $ ansible-galaxy install -r requirements.yml -p roles
 
 ### Ответ:
 * [playbook](./playbook)
-* [lighthouse-role](https://github.com/marc010/lighthouse-role/tree/0.0.5)
+* [lighthouse-role](https://github.com/marc010/lighthouse-role/tree/0.0.1)
 * [vector-role](https://github.com/marc010/vector-role/tree/0.0.4)
