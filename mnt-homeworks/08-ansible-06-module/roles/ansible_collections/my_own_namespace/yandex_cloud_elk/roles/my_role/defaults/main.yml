@@ -1,0 +1,4 @@
+---
+# defaults file for my_role
+path: "/tmp/test.txt"
+content: "some content"

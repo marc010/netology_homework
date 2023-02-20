@@ -1,0 +1,21 @@
+galaxy_info:
+  author: Ilya T.
+  description: This role creates a file and put a content into it.
+
+  license: MIT
+
+  min_ansible_version: 2.10
+
+  platforms:
+  - name: EL
+    versions:
+    - 6
+    - 7
+  - name: Debian
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - all
+
+dependencies: []
