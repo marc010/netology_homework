@@ -19,3 +19,15 @@
 #### [Работа с roles](./08-ansible-04-role/README.md)
 
 ---
+
+#### [Тестирование roles](./08-ansible-05-testing/README.md)
+
+---
+
+#### [Создание собственных модулей](./08-ansible-06-module/README.md)
+
+---
+
+#### [Жизненный цикл ПО](./09-ci-01-intro/README.md)
+
+---
