@@ -43,3 +43,11 @@
 #### [Teamcity](./09-ci-05-teamcity/README.md)
 
 ---
+
+#### [Gitlab](./09-ci-06-gitlab/README.md)
+
+---
+
+#### [Введение в мониторинг](./10-monitoring-01-base/README.md)
+
+---
