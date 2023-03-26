@@ -48,6 +48,6 @@
 
 ---
 
-#### [Введение в мониторинг](./10-monitoring-01-base/README.md)
+#### [Системы мониторинга](./10-monitoring-02-systems/README.md)
 
 ---
