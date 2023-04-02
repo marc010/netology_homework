@@ -55,7 +55,11 @@ dcc1545c5a58   elasticsearch:7.17.9    "/bin/tini -- /usr/l…"   5 minutes ago 
 
 ![kibana](./media/kibana.png)
 
-- [docker-compose](./help/docker-compose.yml) манифест (если вы не использовали директорию help)
+- docker-compose манифест (если вы не использовали директорию help)
+
+[docker-compose](./filebeat_logstash/docker-compose.yml) - filebeat, logstash, es-hot, es-warm, kibana, some_app;
+
+[docker-compose](./fluent-bit/docker-compose.yml)  - fluent-bit, es-hot, es-warm, kibana, some_app;
 
 - ваши yml конфигурации для стека (если вы не использовали директорию help)
 
@@ -70,7 +74,14 @@ dcc1545c5a58   elasticsearch:7.17.9    "/bin/tini -- /usr/l…"   5 minutes ago 
 Перейдите в меню просмотра логов в kibana (Discover) и самостоятельно изучите как отображаются логи и как производить 
 поиск по логам.
 
+fluent-bit:
+
 ![result](./media/result.png)
+
+
+filebeat:
+
+![logstash](./media/logstash.png)
 
 В манифесте директории help также приведенно dummy приложение, которое генерирует рандомные события в stdout контейнера.
 Данные логи должны порождать индекс logstash-* в elasticsearch. Если данного индекса нет - воспользуйтесь советами 

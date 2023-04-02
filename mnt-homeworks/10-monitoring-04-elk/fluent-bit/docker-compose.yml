@@ -30,6 +30,12 @@ services:
       - elastic
     depends_on:
       - es-warm
+      - fluent-bit
+    logging:
+      driver: fluentd
+      options:
+        tag: es_hot
+
 
   es-warm:
     image: elasticsearch:7.17.9 
@@ -55,6 +61,12 @@ services:
       - IPC_LOCK
     networks:
       - elastic
+    logging:
+      driver: fluentd
+      options:
+        tag: es_warm    
+    depends_on:
+      - fluent-bit      
 
   kibana:
     image: kibana:7.17.9
@@ -69,6 +81,11 @@ services:
     depends_on:
       - es-hot
       - es-warm
+      - fluent-bit
+    logging:
+      driver: fluentd
+      options:
+        tag: kibana     
 
   some_application:
     image: library/python:3.9-alpine
@@ -94,8 +111,6 @@ services:
     volumes:
       - ./configs/fluent-bit.conf:/fluent-bit/etc/fluent-bit.conf:ro
       - ./configs/parsers.conf:/fluent-bit/parsers/parsers.conf:ro
-    depends_on:
-      - es-hot
     networks:
       - elastic
 
