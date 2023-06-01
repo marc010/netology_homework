@@ -15,3 +15,7 @@
 #### [Микросервисы: подходы](./11-microservices-03-approaches/README.md)
 
 ---
+
+#### [Микросервисы: масштабирование](./11-microservices-04-scaling/README.md)
+
+---
