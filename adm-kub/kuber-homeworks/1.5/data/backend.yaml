@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      multitool: backend
+  template:
+    metadata:
+      labels:
+        multitool: backend
+    spec:
+      containers:
+      - name: backend
+        image: wbitt/network-multitool:alpine-extra
+        env:
+        - name: HTTP_PORT
+          value: "8080"
+        ports:
+        - name: multitool-web          
+          containerPort: 8080
