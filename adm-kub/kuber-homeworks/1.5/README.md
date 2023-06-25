@@ -162,6 +162,30 @@ Commercial support is available at
 </html>
 100   612  100   612    0     0   2088      0 --:--:-- --:--:-- --:--:--  2095
 ```
+Доработка:
+
+```bash
+$ kubectl get pods
+NAME                       READY   STATUS    RESTARTS   AGE
+backend-bf9b9b6d7-wq277    1/1     Running   0          16m
+frontend-97cdcc855-lwb4x   1/1     Running   0          3m13s
+frontend-97cdcc855-rq9hq   1/1     Running   0          3m13s
+frontend-97cdcc855-v7n7h   1/1     Running   0          3m13s
+$ kubectl get svc
+NAME           TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)    AGE
+kubernetes     ClusterIP   10.152.183.1     <none>        443/TCP    7d1h
+frontend-svc   ClusterIP   10.152.183.17    <none>        80/TCP     16m
+backend-svc    ClusterIP   10.152.183.221   <none>        8080/TCP   16m
+
+```
+
+```bash
+$ kubectl exec frontend-97cdcc855-lwb4x -- curl backend-svc.default.svc.cluster.local:8080
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0WBITT Network MultiTool (with NGINX) - backend-bf9b9b6d7-wq277 - 10.1.116.167 . (Formerly praqma/network-multitool)
+100   116  100   116    0     0   7469      0 --:--:-- --:--:-- --:--:--  7733
+```
 
 5. Предоставить манифесты Deployment и Service в решении, а также скриншоты или вывод команды п.4.
 
