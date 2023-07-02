@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: daemonset
+spec:
+  selector:
+    matchLabels:
+      app: multitool
+  template:
+    metadata:
+      labels:
+        app: multitool
+    spec:
+      containers:
+      - name: multitool
+        image: wbitt/network-multitool:alpine-extra
+        volumeMounts:
+        - name: microk8s-logs
+          mountPath: /input
+      volumes:
+      - name: microk8s-logs
+        hostPath:
+          path: /var/log
