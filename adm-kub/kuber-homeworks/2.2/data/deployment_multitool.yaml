@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task2
+  labels:
+    app: multitool
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: multitool
+  template:
+    metadata:
+      labels:
+        app: multitool
+    spec:
+      containers:
+      - name: multitool
+        image: wbitt/network-multitool:alpine-extra
+        volumeMounts:
+        - name: volume2
+          mountPath: /common
+      volumes:
+      - name: volume2
+        persistentVolumeClaim:
+          claimName: dynamic-volume-claim
