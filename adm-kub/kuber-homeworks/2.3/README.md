@@ -269,14 +269,14 @@ spec:
               name: nginx
 ```
 
-<details> <summary> Host file:</summary>
-    ```
-    $ cat /etc/hosts
-    127.0.0.1	localhost
-    127.0.1.1	nitro
-    192.168.56.11   netology.local
-    ```
-</details>
+Host file:
+
+```bash
+$ cat /etc/hosts
+127.0.0.1	localhost
+127.0.1.1	nitro
+192.168.56.11   netology.local
+```
 
 Service:
 
