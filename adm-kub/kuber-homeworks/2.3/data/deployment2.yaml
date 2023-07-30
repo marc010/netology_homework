@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: task2
+  labels:
+    app: nginx
+  namespace: ns2
+spec:
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        volumeMounts:
+        - name: configmap-volume
+          mountPath: /usr/share/nginx/html/
+        ports:
+        - containerPort: 443
+      volumes:
+      - name: configmap-volume
+        configMap:
+          name: configmap2

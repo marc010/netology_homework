@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap2
+  namespace: ns2
+data:
+  netology.html: |
+    <h1>Netology</h1>
+    <p>super secure web page</p>
