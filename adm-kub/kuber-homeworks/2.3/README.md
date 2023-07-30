@@ -136,6 +136,14 @@ $ curl 10.152.183.61/netology.html
 <p>some text</p>
 ```
 
+Доработка (Обращее по доменному имени):
+
+```bash
+$ curl task1.ns1.svc.cluster.local/netology.html
+<h1>Netology</h1>
+<p>some text</p>
+```
+
 5. Предоставить манифесты, а также скриншоты или вывод необходимых команд.
 
 * [Deployment](./data/deployment1.yaml)
