@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  {{- $release := .Release.Name }}
+  name: {{ .Values.deployment.name }}{{ $release }}
+  namespace: {{ .Values.namespace }}
+  labels:
+    {{ .Values.deployment.labels.key }}: {{ .Values.deployment.labels.value }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      {{ .Values.deployment.labels.key }}: {{ .Values.deployment.labels.value }}
+  template:
+    metadata:
+      labels:
+        {{ .Values.deployment.labels.key }}: {{ .Values.deployment.labels.value }}
+    spec:
+      containers:
+      - name: {{ .Values.deployment.name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
+        ports:
+        - name: {{ .Values.deployment.portName }}         
+          containerPort: {{ .Values.deployment.appPort }}

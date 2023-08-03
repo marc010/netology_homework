@@ -1,0 +1,27 @@
+replicaCount: 1
+namespace: ns1
+
+deployment:
+  name: nginx-netology
+  appPort: 80
+  portName: nginx-web
+  labels:
+    key: app
+    value: netology-demo
+    
+image:
+  repository: nginx
+  tag: ""
+
+service:
+  name: netology-svc
+  type: ClusterIP
+  port: 80
+
+ingress:
+  className: ""
+  hosts:
+    - host: netology.local
+      paths:
+        - path: /
+          pathType: Prefix
