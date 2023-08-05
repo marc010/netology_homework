@@ -43,3 +43,7 @@
 #### [Helm](./2.5/README.md)
 
 ---
+
+#### [Компоненты Kubernetes](./3.1/README.md)
+
+---
