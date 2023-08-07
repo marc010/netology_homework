@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deployment-cache
+  labels:
+    app: multitool
+  namespace: app
+spec:
+  selector:
+    matchLabels:
+      app: cache
+  template:
+    metadata:
+      labels:
+        app: cache
+    spec:
+      containers:
+        - name: cache
+          image: wbitt/network-multitool:alpine-extra
+          ports:
+          - name: cache
+            containerPort: 80
