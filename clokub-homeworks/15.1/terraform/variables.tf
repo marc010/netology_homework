@@ -27,13 +27,13 @@ variable "yc_region" {
 }
 
 variable "yc_cloud_id" {
-  default = "b1gj228gu73k9ver1kdb"
+  default = ""
 }
 
 variable "yc_folder_id" {
-  default = "b1gj228gu73k9ver1kdb"
+  default = ""
 }
 
-variable "nat_image_id" {
-  default = "fd8qmbqk94q6rhb4m94t"
-}
+# variable "nat_image_id" {
+#   default = "fd8qmbqk94q6rhb4m94t"
+# }
