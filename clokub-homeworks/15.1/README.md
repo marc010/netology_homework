@@ -259,6 +259,8 @@ ip адрес соответствует адресу nat инстанса.
 
 ![result](./media/result.png)
 
+[Terraform](./terraform)
+
 Resource terraform для ЯО
 - [VPC subnet](https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/vpc_subnet)
 - [Route table](https://registry.terraform.io/providers/yandex-cloud/yandex/latest/docs/resources/vpc_route_table)
