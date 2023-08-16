@@ -19,3 +19,8 @@
 
 ### [Администрирование и конфигурация Kubernetes](./adm-kub/README.md)
 #### 10 мая — 13 июля
+
+---
+
+### [Kubernetes и облачные сервисы](./clokub-homeworks/README.md)
+#### 26 июля — 7 сентября
