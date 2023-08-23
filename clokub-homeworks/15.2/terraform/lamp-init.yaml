@@ -1,0 +1,10 @@
+#cloud-config
+runcmd:
+  - echo '<html>\n<head>\n<title>NETOLOGY</title>\n</head>\n<body>\n'`curl ifconfig.me`'<img src="https://storage.yandexcloud.net/netology.pictures.marc/netology_logo" width=100%>\n</body>\n</html>' > /var/www/html/index.html
+users:
+  - name: user
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa <public_key>
