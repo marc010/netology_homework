@@ -1,0 +1,39 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: phpadmin
+spec:
+  selector:
+    matchLabels:
+      app: phpadmin
+  template:
+    metadata:
+      labels:
+        app: phpadmin
+    spec:
+      containers:
+      - image: phpmyadmin/phpmyadmin:5.2.1
+        name: phpadmin
+        ports:
+        - containerPort: 80
+        env:
+        - name: PMA_USER
+          value: "user"
+        - name: PMA_PASSWORD 
+          value: "password"
+        - name: PMA_HOST
+          value: "rc1b-ltp3dghkuim7as6a.mdb.yandexcloud.net"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: phpadmin-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: phpadmin
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
