@@ -57,7 +57,7 @@ $ batcat main.tf versions.tf
 ───────┬───────────────────────────────────────────────────────────────────────────────────────────
        │ File: versions.tf
 ───────┼───────────────────────────────────────────────────────────────────────────────────────────
-   1   │ terraform {
+   1   │ 00-pre-use-terraform {
    2   │   required_providers {
    3   │     yandex = {
    4   │       source = "yandex-cloud/yandex"
@@ -68,7 +68,7 @@ $ batcat main.tf versions.tf
 ```
 Инициализируем терраформ:
 ```bash
-$ terraform init
+$ 00-pre-use-terraform init
 ```
 
 3. Внимание! В гит репозиторий нельзя пушить ваши личные ключи доступа к аккаунту. Поэтому в предыдущем задании мы указывали
@@ -142,18 +142,18 @@ output "external_ip_address_test_vm" {
        * Идентификатор подсети в которой создан инстанс.  
 
 ```bash
-$ terraform validate
+$ 00-pre-use-terraform validate
 Success! The configuration is valid.
 ```
 Проверяем ресурсы:
 ```bash
-$ terraform plan
+$ 00-pre-use-terraform plan
 ```
 
 7. Если вы выполнили первый пункт, то добейтесь того, что бы команда `terraform plan` выполнялась без ошибок. 
 
 ```bash
-$ terraform apply
+$ 00-pre-use-terraform apply
 ...
 Outputs:
 

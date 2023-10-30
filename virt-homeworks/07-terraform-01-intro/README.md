@@ -76,7 +76,7 @@
 В виде результата этой задачи приложите вывод команды `terraform --version`.
 
 ```bash
-$ terraform --version
+$ 00-pre-use-terraform --version
 Terraform v1.3.6
 on linux_amd64
 ```
@@ -98,13 +98,13 @@ $ sudo wget https://releases.hashicorp.com/terraform/0.12.31/terraform_0.12.31_l
 $ sudo apt install unzip
 $ sudo unzip terraform_0.12.31_linux_amd64.zip
 $ sudo rm -f terraform_0.12.31_linux_amd64.zip
-$ sudo ln -s /opt/terraform012/terraform /usr/bin/terraform012
+$ sudo ln -s /opt/terraform012/00-pre-use-terraform /usr/bin/terraform012
 ```
 
 Ответ:
 
 ```bash
-$ terraform --version
+$ 00-pre-use-terraform --version
 Terraform v1.3.6
 on linux_amd64
 $ terraform012 --version

@@ -24,3 +24,8 @@
 
 ### [Kubernetes и облачные сервисы](./clokub-homeworks/README.md)
 #### 26 июля — 7 сентября
+
+---
+
+## [Дипломный практикум в Yandex.Cloud](./devops-diplom-yandexcloud/README.md)
+

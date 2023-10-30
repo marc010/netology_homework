@@ -8,7 +8,7 @@
 4. Подготовьте хосты в соответствии с группами из предподготовленного playbook.
 
 ```bash
-$ terraform apply
+$ 00-pre-use-terraform apply
 ...
 Outputs:
 

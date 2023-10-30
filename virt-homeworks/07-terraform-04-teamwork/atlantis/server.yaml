@@ -1,6 +1,6 @@
 repos:
 
-- id: github.com/marc010/terraform
+- id: github.com/marc010/00-pre-use-terraform
 
   apply_requirements: [mergeable]
   allowed_overrides: [workflow]

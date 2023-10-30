@@ -33,7 +33,7 @@ provider "yandex" {
 
 2. Инициализируем провайдера:
 ```bash
-$ terraform init
+$ 00-pre-use-terraform init
 ```
 3. Создадим бакет и сервисный аккаунт для работы с ним bucket.tf:
 
@@ -96,7 +96,7 @@ secret_key = ""
 6 Инициализируем terraform для работы с бэкендом:
 
 ```bash
-$ terraform init --backend-config=backend.cred
+$ 00-pre-use-terraform init --backend-config=backend.cred
 ```
 
 Ответ:
@@ -112,9 +112,9 @@ dynamodb.
 1. Создайте два воркспейса `stage` и `prod`.
 
 ```bash
-$ terraform workspace new stage
-$ terraform workspace new prod
-$ terraform workspace list
+$ 00-pre-use-terraform workspace new stage
+$ 00-pre-use-terraform workspace new prod
+$ 00-pre-use-terraform workspace list
   default
 * prod
   stage
@@ -298,7 +298,7 @@ output "external_ip_address_always_present_vm" {
 * Вывод команды `terraform workspace list`.
 
 ```bash
-$ terraform workspace list
+$ 00-pre-use-terraform workspace list
   default
 * prod
   stage
@@ -307,7 +307,7 @@ $ terraform workspace list
 * Вывод команды `terraform plan` для воркспейса `prod`.
 
 ```bash
-$ terraform plan
+$ 00-pre-use-terraform plan
 
 Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following
 symbols:
