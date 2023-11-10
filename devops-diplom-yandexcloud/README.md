@@ -44,8 +44,6 @@
 2. Подготовьте [backend](https://www.terraform.io/docs/language/settings/backends/index.html) для Terraform:  
    а. Рекомендуемый вариант: S3 bucket в созданном ЯО аккаунте(создание бакета через TF)
 
-[Выполнение](diplom/00-pre-use-terraform/README.md)
-
 ![state](./media/state.png)
 
 б. Альтернативный вариант:  [Terraform Cloud](https://app.terraform.io/)  
@@ -173,7 +171,7 @@ worker3   Ready    <none>          3d2h   v1.28.3   192.168.12.5    <none>      
 
 [Выполнение](https://github.com/marc010/test_app/blob/main/Dockerfile)
 
-2. 2.Альтернативный вариант:  
+2. Альтернативный вариант:  
    а. Используйте любой другой код, главное, чтобы был самостоятельно создан Dockerfile.
 
 Ожидаемый результат:
