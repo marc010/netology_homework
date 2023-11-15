@@ -322,7 +322,7 @@ ame: CD
 on:
   push:
     tags:
-      - 'v*.*.*'
+      - 'v[0-9]+.[0-9]+.[0-9]+'
     branches-ignore:
       - "*"
 
