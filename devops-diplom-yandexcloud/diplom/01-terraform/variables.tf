@@ -10,16 +10,8 @@ variable "yc_folder_id" {
   default = ""
 }
 
-data "yandex_compute_image" "nat-image" {
-  family = "nat-instance-ubuntu"
-}
-
 data "yandex_compute_image" "ubuntu-image" {
   family = "ubuntu-2204-lts"
-}
-
-variable "nat_instance_ip" {
-  default = "192.168.10.254"
 }
 
 locals {    # locals позволяет интерполировать значение переменных
